@@ -22,9 +22,9 @@
                         <GradientStop Color="red" Offset="1"/>
                     </LinearGradientBrush>
                 </Border.Background>
-                
-                
-                
+
+
+
                 <Border.Clip>
                     <RectangleGeometry RadiusX="10"
                                        RadiusY="10"
@@ -39,11 +39,16 @@
                                    Margin="20,10,10,0"/>
                         <TextBlock Text="Get Started TODAY!"
                                    Foreground="white"
-                                   FontSize="28"
+                                   FontSize="18"
                                    Margin="20,10,10,0"/>
                     </StackPanel>
+                    <Image Width="250"
+                           Height="250"
+                           Source="/Images/World_Connection _Flatline.png"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Bottom" Margin="0,0,-24,-37"/>
                 </Grid>
-                
+
             </Border>
         </StackPanel>
     </StackPanel>

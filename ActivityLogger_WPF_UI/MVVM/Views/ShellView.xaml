@@ -5,12 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ActivityLogger_WPF_UI.MVVM.Views"
         mc:Ignorable="d"
-        Title="ShellView" Height="450" Width="800">
-    <DockPanel>
+        Title="ShellView" Height="600" Width="950"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True" Loaded="OnLoaded">
+    <Border Background="#404040"
+            CornerRadius="25">
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock 
+                x:Name="ClockTextBox"
+                Text="TIME"
+                Foreground="White"
+                FontSize="34"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                />
+
+
+
+            <StackPanel 
+                Grid.Column="1"
+                Orientation="Horizontal">
+                
+            </StackPanel>
+            <StackPanel 
+                Grid.Row="1">
+                
+            </StackPanel>
             <ContentControl x:Name="ActiveItem">
                 
             </ContentControl>
         </Grid>
-    </DockPanel>
+    </Border>
 </Window>
