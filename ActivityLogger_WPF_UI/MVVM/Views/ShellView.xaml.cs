@@ -23,17 +23,17 @@ namespace ActivityLogger_WPF_UI.MVVM.Views
         System.Windows.Threading.DispatcherTimer Timer = new System.Windows.Threading.DispatcherTimer();
         public ShellView()
         {
-            InitializeComponent();
-            Timer.Tick += new EventHandler(OnLoaded);
-            Timer.Interval = new TimeSpan(0, 0, 1);
-            Timer.Start();
+            //InitializeComponent();
+            //Timer.Tick += new EventHandler(OnLoaded);
+            //Timer.Interval = new TimeSpan(0, 0, 1);
+            //Timer.Start();
         }
 
-        private void OnLoaded(object sender, EventArgs e)
-        {
-            DateTime d;
-            d = DateTime.Now;
-            ClockTextBox.Text = d.Hour + ":" + d.Minute + ":" + d.Second;
-        }
+        //private void OnLoaded(object sender, EventArgs e)
+        //{
+        //    DateTime d;
+        //    d = DateTime.Now;
+        //    ClockTextBox.Text = d.Hour + ":" + d.Minute + ":" + d.Second;
+        //}
     }
 }

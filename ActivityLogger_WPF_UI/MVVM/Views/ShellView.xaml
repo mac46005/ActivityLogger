@@ -9,7 +9,7 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
-        AllowsTransparency="True" Loaded="OnLoaded">
+        AllowsTransparency="True">
     <Border Background="#404040"
             CornerRadius="25">
         <Grid>
@@ -39,6 +39,12 @@
             </StackPanel>
             <StackPanel 
                 Grid.Row="1">
+                <RadioButton 
+                    Content="Text"
+                    Foreground="White"
+                    Height="25">
+                    
+                </RadioButton>
                 
             </StackPanel>
             <ContentControl x:Name="ActiveItem">
