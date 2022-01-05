@@ -8,9 +8,16 @@
                 <ResourceDictionary>
                     <local:Bootstrapper x:Key="Bootstrapper"/>
                 </ResourceDictionary>
+
+
+
+
+                <ResourceDictionary Source="Theme/DashBoardMenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/DashBoardWindowButtonTheme.xaml"/>
                 
-                
-                
+
+
+
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/SearchTextBoxTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>

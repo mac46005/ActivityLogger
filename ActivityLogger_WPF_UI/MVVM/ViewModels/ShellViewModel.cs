@@ -47,5 +47,51 @@ namespace ActivityLogger_WPF_UI.MVVM.ViewModels
             }
         }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public void CLose()
+        {
+            this.TryClose();
+        }
     }
 }

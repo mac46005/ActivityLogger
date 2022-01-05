@@ -29,6 +29,14 @@ namespace ActivityLogger_WPF_UI.MVVM.Views
             //Timer.Start();
         }
 
+        private void Border_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
         //private void OnLoaded(object sender, EventArgs e)
         //{
         //    DateTime d;

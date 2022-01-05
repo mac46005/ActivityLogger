@@ -7,49 +7,71 @@
         mc:Ignorable="d"
         Title="ShellView" Height="600" Width="950"
         WindowStyle="None"
-        ResizeMode="NoResize"
+        ResizeMode="CanResizeWithGrip"
         Background="Transparent"
         AllowsTransparency="True">
     <Border Background="#404040"
-            CornerRadius="25">
+            CornerRadius="25"
+            MouseDown="Border_MouseDown">
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="75"/>
+                <RowDefinition Height="80"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBlock 
-                x:Name="ClockTextBox"
-                Text="TIME"
-                Foreground="White"
-                FontSize="34"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                />
-
-
-
-            <StackPanel 
-                Grid.Column="1"
-                Orientation="Horizontal">
-                
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            
+            <!-- Top Bar -->
+            
+            <StackPanel Grid.Row="0" Grid.Column="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"
+                        Margin="0 0 0 40">
+                <Button Grid.Row="0" Grid.Column="1"
+                    Content="X"
+                    Background="Yellow"
+                    Style="{StaticResource DashBoardWindowButton}"/>
+                <Button Grid.Row="0" Grid.Column="1"
+                    Content="X"
+                    Background="Orange"
+                    Style="{StaticResource DashBoardWindowButton}"/>
+                <Button Grid.Row="0" Grid.Column="1"
+                    Content="X"
+                    Background="Red"
+                    Style="{StaticResource DashBoardWindowButton}"
+                        x:Name="Close"/>
             </StackPanel>
-            <StackPanel 
-                Grid.Row="1">
-                <RadioButton 
-                    Content="Text"
-                    Foreground="White"
-                    Height="25">
-                    
-                </RadioButton>
-                
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- Side Bar -->
+            <StackPanel Grid.Row="1" Grid.Column="0">
+                <RadioButton Content="Current Activity"
+                             Foreground="White"
+                             Style="{StaticResource DashBoardMenuButton}"/>
             </StackPanel>
-            <ContentControl x:Name="ActiveItem">
+            
+            <!-- Main Content -->
+            <ContentControl Grid.Row="1" Grid.Column="1" x:Name="ActiveItem"
+                            Margin="7">
                 
             </ContentControl>
+            
+            
+            
+            
+            
+            
         </Grid>
+        
+        
     </Border>
 </Window>
