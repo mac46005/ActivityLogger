@@ -22,56 +22,83 @@
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
-            
-            <!-- Top Bar -->
-            
+
+
+            <!-- TOP BAR  -->
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="0" Grid.Column="1"
+                        HorizontalAlignment="Left">
+                <ComboBox
+                    Style="{StaticResource ComboBoxTheme}">
+                    <ComboBoxItem Content="test"/>
+                </ComboBox>
+            </StackPanel>
+
             <StackPanel Grid.Row="0" Grid.Column="1"
                         Orientation="Horizontal"
                         HorizontalAlignment="Right"
                         Margin="0 0 0 40">
+
                 <Button Grid.Row="0" Grid.Column="1"
-                    Content="X"
-                    Background="Yellow"
-                    Style="{StaticResource DashBoardWindowButton}"/>
+                        Content="_"
+                        Background="Yellow"
+                        Style="{StaticResource DashBoardWindowButton}"
+                        Click="MinimizeButton_Click"/>
+
                 <Button Grid.Row="0" Grid.Column="1"
-                    Content="X"
-                    Background="Orange"
-                    Style="{StaticResource DashBoardWindowButton}"/>
+                        Content="O"
+                        Background="Orange"
+                        Style="{StaticResource DashBoardWindowButton}"
+                        Click="MaximizeButton_Click"/>
+
                 <Button Grid.Row="0" Grid.Column="1"
                     Content="X"
                     Background="Red"
                     Style="{StaticResource DashBoardWindowButton}"
-                        x:Name="Close"/>
+                        Click="CloseButton_Click"/>
             </StackPanel>
             
-            
-            
-            
-            
-            
-            
-            
+            <!-- END TOP BAR -->
+
+
+
+
+
+
+
             <!-- Side Bar -->
             <StackPanel Grid.Row="1" Grid.Column="0">
                 <RadioButton Content="Current Activity"
                              Foreground="White"
                              Style="{StaticResource DashBoardMenuButton}"/>
+
+                <RadioButton Content="View Logs"
+                             Foreground="White"
+                             Style="{StaticResource DashBoardMenuButton}"/>
+
+                <RadioButton Content="Data Editor"
+                             Foreground="White"
+                             Style="{StaticResource DashBoardMenuButton}"/>
+
+                <RadioButton Content="System Settings"
+                             Foreground="White"
+                             Style="{StaticResource DashBoardMenuButton}"/>
+
             </StackPanel>
-            
+
             <!-- Main Content -->
             <ContentControl Grid.Row="1" Grid.Column="1" x:Name="ActiveItem"
                             Margin="7">
-                
+
             </ContentControl>
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
         </Grid>
-        
-        
+
+
     </Border>
 </Window>
