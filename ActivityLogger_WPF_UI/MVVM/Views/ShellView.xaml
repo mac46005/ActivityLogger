@@ -28,8 +28,8 @@
             <StackPanel Orientation="Horizontal"
                         Grid.Row="0" Grid.Column="1"
                         HorizontalAlignment="Left">
-                <ComboBox
-                    Style="{StaticResource ComboBoxTheme}">
+                <ComboBox Template="{DynamicResource ComboBoxTemplate}" Width="200"
+                     Background="#FF611212" Foreground="Red" BorderBrush="#FFF12525">
                     <ComboBoxItem Content="test"/>
                 </ComboBox>
             </StackPanel>
@@ -59,13 +59,13 @@
             </StackPanel>
             
             <!-- END TOP BAR -->
-
-
-
-
-
-
-
+            
+            
+            
+            
+            
+            
+            
             <!-- Side Bar -->
             <StackPanel Grid.Row="1" Grid.Column="0">
                 <RadioButton Content="Current Activity"
@@ -89,7 +89,9 @@
             <!-- Main Content -->
             <ContentControl Grid.Row="1" Grid.Column="1" x:Name="ActiveItem"
                             Margin="7">
-
+                
+                
+                
             </ContentControl>
 
 
