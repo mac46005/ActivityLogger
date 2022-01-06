@@ -10,10 +10,10 @@
                 </ResourceDictionary>
 
 
-
-
+                <ResourceDictionary Source="Theme/DashBoardColorTheme.xaml"/>
                 <ResourceDictionary Source="Theme/DashBoardMenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/DashBoardWindowButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/DashBoardButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/ComboBoxTheme.xaml"/>
                 
 

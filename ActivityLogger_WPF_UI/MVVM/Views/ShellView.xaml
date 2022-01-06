@@ -28,10 +28,20 @@
             <StackPanel Orientation="Horizontal"
                         Grid.Row="0" Grid.Column="1"
                         HorizontalAlignment="Left">
+                <Label Content="Selected Activity: "
+                       FontSize="20"
+                       FontWeight="Bold"
+                       Foreground="{StaticResource DashBoard.Text.Color}"
+                       VerticalAlignment="Center"/>
                 <ComboBox Template="{DynamicResource ComboBoxTemplate}" Width="200"
                      Background="#FF611212" Foreground="Red" BorderBrush="#FFF12525">
                     <ComboBoxItem Content="test"/>
                 </ComboBox>
+                <Button Content="Add New Activity"
+                        Foreground="White"
+                        Background="#333333"
+                        Style="{StaticResource DashBoardButtonTheme}"
+                        Width="100"/>
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="1"
