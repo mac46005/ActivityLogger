@@ -13,5 +13,7 @@ namespace ActivityLogger.ClassLibrary.Models
         public int Interval_ID { get; set; }
         public TimeModel Interval { get; set; }
         public string Note { get; set; }
+
+        public override string ToString() => ActivityName;
     }
 }

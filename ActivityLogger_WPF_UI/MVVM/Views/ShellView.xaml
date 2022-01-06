@@ -53,10 +53,18 @@
                        FontWeight="Bold"
                        Foreground="{StaticResource DashBoard.Text.Color}"
                        VerticalAlignment="Center"/>
-                <ComboBox Template="{DynamicResource ComboBoxTemplate}" Width="200"
-                     Background="#FF611212" Foreground="Red" BorderBrush="#FFF12525">
-                    <ComboBoxItem Content="test"/>
+                
+                
+                <!-- SELECT YOUR ACTIVITY HERE -->
+                <ComboBox ItemsSource="{Binding ListOfActivities}"
+                          SelectedItem="{Binding SelectedActivity}"
+                          Template="{DynamicResource ComboBoxTemplate}"
+                          Width="200">
                 </ComboBox>
+                
+                
+                
+                
                 <Button Content="Add New Activity"
                         Foreground="White"
                         Background="{StaticResource DashBoard.Button.Color}"
