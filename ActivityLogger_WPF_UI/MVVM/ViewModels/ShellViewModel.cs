@@ -35,7 +35,7 @@ namespace ActivityLogger_WPF_UI.MVVM.ViewModels
 
             ListOfActivities = new ObservableCollection<ActivityModel>()
             {
-                new ActivityModel{ ID = 1,ActivityName = "test",Interval = new TimeModel{Hour = 1,Minute = 2,Second = 3},Interval_ID = 1,Note = "Test data yo"}
+                new ActivityModel{ ID = 1,ActivityName = "test",WorkInterval = new TimeModel{Hour = 1,Minute = 2,Second = 3},Interval_ID = 1,Description = "Test data yo"}
             };
 
 

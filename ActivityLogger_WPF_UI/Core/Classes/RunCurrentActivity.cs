@@ -32,9 +32,9 @@ namespace ActivityLogger_WPF_UI.Core.Classes
             _timer = new DispatcherTimer();
             _timer.Tick += new EventHandler(Timer_Tick);
             _timer.Interval = new TimeSpan(
-                _currentActivity.Interval.Hour,
-                _currentActivity.Interval.Minute,
-                _currentActivity.Interval.Second
+                _currentActivity.WorkInterval.Hour,
+                _currentActivity.WorkInterval.Minute,
+                _currentActivity.WorkInterval.Second
                 );
         }
 

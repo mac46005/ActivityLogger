@@ -10,9 +10,16 @@ namespace ActivityLogger.ClassLibrary.Models
     {
         public int ID { get; set; }
         public string ActivityName { get; set; }
-        public int Interval_ID { get; set; }
-        public TimeModel Interval { get; set; }
-        public string Note { get; set; }
+
+        public int WorkInterval_ID { get; set; }
+        public TimeModel WorkInterval { get; set; }
+
+
+        public int BreakInterval_ID { get; set; }
+        public TimeModel BreakInterval { get; set; }
+
+
+        public string Description { get; set; }
 
         public override string ToString() => ActivityName;
     }
