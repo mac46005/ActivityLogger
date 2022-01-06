@@ -11,8 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Core\Interfaces\" />
     <Folder Include="Fonts\" />
     <Folder Include="MVVM\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ActivityLogger.ClassLibrary\ActivityLogger.ClassLibrary.csproj" />
   </ItemGroup>
 
 </Project>

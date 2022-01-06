@@ -1,4 +1,5 @@
-﻿using Caliburn.Micro;
+﻿using ActivityLogger_WPF_UI.Core.Classes;
+using Caliburn.Micro;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace ActivityLogger_WPF_UI.MVVM.ViewModels
 {
     public class ShellViewModel : Conductor<object>
     {
-        DispatcherTimer timer;
+        public static RunCurrentActivity RunCurrentActivity = new RunCurrentActivity();
         IEventAggregator _events;
         public ShellViewModel(IEventAggregator events)
         {
@@ -18,17 +19,17 @@ namespace ActivityLogger_WPF_UI.MVVM.ViewModels
             _events.Subscribe(this);
 
         }
-        protected override async void OnViewLoaded(object view)
+        protected override void OnViewLoaded(object view)
         {
-            timer = new DispatcherTimer();
-            timer.Tick += new EventHandler(TickTheClock);
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Start();
-             await Task.Run(() => TickTheClock(view,new EventArgs()));
+
+
+
+
+
         }       
 
 
-        private async void TickTheClock(object sender,EventArgs e)
+        private void TickTheClock(object sender,EventArgs e)
         {
             DateTime d;
             d = DateTime.Now;

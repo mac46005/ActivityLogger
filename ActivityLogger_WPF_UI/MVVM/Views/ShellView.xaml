@@ -24,6 +24,26 @@
             </Grid.ColumnDefinitions>
 
 
+
+            <StackPanel Grid.Row="0" Grid.Column="0"
+                        VerticalAlignment="Center">
+                <Label Content="DATE"
+                   x:Name="DateLabel"
+                   FontSize="12"
+                   Foreground="{StaticResource DashBoard.Text.Color}"
+                       HorizontalAlignment="Center"/>
+                <Label Content="TIME"
+                       x:Name="TimeLabel"
+                       FontSize="20"
+                       Foreground="{StaticResource DashBoard.Text.Color}"
+                       HorizontalAlignment="Center"/>
+            </StackPanel>
+            
+            
+            
+            
+            
+            
             <!-- TOP BAR  -->
             <StackPanel Orientation="Horizontal"
                         Grid.Row="0" Grid.Column="1"
@@ -39,7 +59,7 @@
                 </ComboBox>
                 <Button Content="Add New Activity"
                         Foreground="White"
-                        Background="#333333"
+                        Background="{StaticResource DashBoard.Button.Color}"
                         Style="{StaticResource DashBoardButtonTheme}"
                         Width="100"/>
             </StackPanel>

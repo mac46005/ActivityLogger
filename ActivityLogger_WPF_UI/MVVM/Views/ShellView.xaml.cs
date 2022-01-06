@@ -23,10 +23,10 @@ namespace ActivityLogger_WPF_UI.MVVM.Views
         System.Windows.Threading.DispatcherTimer Timer = new System.Windows.Threading.DispatcherTimer();
         public ShellView()
         {
-            //InitializeComponent();
-            //Timer.Tick += new EventHandler(OnLoaded);
-            //Timer.Interval = new TimeSpan(0, 0, 1);
-            //Timer.Start();
+            InitializeComponent();
+            Timer.Tick += new EventHandler(Timer_Tick);
+            Timer.Interval = new TimeSpan(0, 0, 1);
+             Timer.Start();
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -58,11 +58,12 @@ namespace ActivityLogger_WPF_UI.MVVM.Views
             Close();
         }
 
-        //private void OnLoaded(object sender, EventArgs e)
-        //{
-        //    DateTime d;
-        //    d = DateTime.Now;
-        //    ClockTextBox.Text = d.Hour + ":" + d.Minute + ":" + d.Second;
-        //}
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            DateTime d;
+            d = DateTime.Now;
+            DateLabel.Content = d.Date.ToString("D");
+            TimeLabel.Content = d.Hour.ToString("D2") + ":" + d.Minute.ToString("D2") + ":" + d.Second.ToString("D2");
+        }
     }
 }
