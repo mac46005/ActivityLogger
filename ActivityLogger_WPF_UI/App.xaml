@@ -15,8 +15,9 @@
                 <ResourceDictionary Source="Theme/DashBoardWindowButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/DashBoardButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/ComboBoxTheme.xaml"/>
-                
 
+
+                <ResourceDictionary Source="Theme/CurrentActivityViewControlDictionary.xaml"/>
 
 
                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
