@@ -6,6 +6,8 @@
   <a href="#license">License</a> •
 </p>
 
+![LicenseBadge](https://img.shields.io/github/license/mac46005/ActivityLogger)
+
 ## About  
 Log you life activites and keep track of what activities you do throughout the day.
 
