@@ -8,6 +8,8 @@
         Title="ShellView" Height="600" Width="950"
         WindowStyle="None"
         ResizeMode="CanResizeWithGrip"
+        MinHeight="600"
+        MinWidth="950"
         Background="Transparent"
         AllowsTransparency="True">
     <Border Background="#404040"

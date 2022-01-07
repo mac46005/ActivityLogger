@@ -7,7 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Border Background="#d699ff"
+        
+        
+        
+        
+        
+        <Border Background="{StaticResource CurrentActivityView.Background}"
                 CornerRadius="10">
             <Grid>
                 <Grid.RowDefinitions>
@@ -15,38 +20,75 @@
                     <RowDefinition/>
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
-
+                
+                
+                <!-- TOP -->
+                <StackPanel Orientation="Horizontal"
+                            Grid.Row="0">
+                    <Label Content="CURRENT ACTIVITY"/>
+                </StackPanel>
+                
+                
+                
+                <!-- MIDDLE -->
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="450"/>
+                        <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     
+                    <!-- LEFT -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                                   Content="WORK"
+                                   Foreground="Lime"
+                                   Style="{StaticResource TimeLabelBoxes}"/>
+                            <Label Grid.Column="1"
+                                   Content="BREAK"
+                                   Foreground="Red"
+                                   Style="{StaticResource TimeLabelBoxes}"/>
+
+
+                        </Grid>
+                        
+                    </Grid>
                     
+                    
+                    
+                    <!-- RIGHT -->
                     <Grid Grid.Column="1">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            
-                            
+
+
                             <!-- TODO LIST -->
                             <Grid Grid.Column="0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="25"/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                
+
                                 <Label Grid.Row="0"
                                        Content="COLOR"
                                        Style="{StaticResource TodoLabel}"/>
 
                                 <ListBox Grid.Row="1"
                                          Style="{StaticResource TodoListBox}"/>
-                                
+
                             </Grid>
-                            
+
                             <!-- SESSION LOGS -->
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
@@ -61,31 +103,21 @@
                                 <ListView Grid.Row="1"
                                          Style="{StaticResource SessionLogs}"/>
 
-
                             </Grid>
-                            
-                            
-
                         </Grid>
-
-
                     </Grid>
-                    
-                    
-                    
-                    
                 </Grid>
-
-
-
-
+                
+                <!-- BOTTOM -->
                 <Grid Grid.Row="3">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="80"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <TextBox Grid.Row="0"/>
+                    <TextBox Grid.Row="0"
+                             FontSize="50"
+                             Style="{StaticResource LogTextBox}"/>
                     
                     
                     <StackPanel Orientation="Horizontal"
