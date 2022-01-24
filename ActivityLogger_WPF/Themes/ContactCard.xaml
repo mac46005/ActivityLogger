@@ -6,8 +6,12 @@
             <Trigger Property="IsSelected" Value="True">
                 <Setter Property="Background" Value="#292b2F"/>
             </Trigger>
-        </Style.Triggers>
 
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#292b2F"/>
+            </Trigger>
+
+        </Style.Triggers>
         <Setter Property="Background" Value="#393B40"/>
 
         <Setter Property="Template">
@@ -23,7 +27,9 @@
                                     Background="CornflowerBlue"
                                     CornerRadius="25"/>
                             <StackPanel>
-                                <Label Content="{Binding Username}"/>
+                                <Label Content="{Binding Username}"
+                                       Foreground="White"
+                                       FontSize="15"/>
                                 <Label Content="{Binding LastMessage}"
                                        Foreground="Gray"
                                        FontSize="10"/>
