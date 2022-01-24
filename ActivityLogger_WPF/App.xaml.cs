@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ActivityLogger_WPF_UI
+namespace ActivityLogger_WPF
 {
     /// <summary>
     /// Interaction logic for App.xaml

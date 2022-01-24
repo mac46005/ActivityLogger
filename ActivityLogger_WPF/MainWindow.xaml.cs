@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ActivityLogger_WPF_UI.MVVM.Views
+namespace ActivityLogger_WPF
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class MainWindow : Window
     {
-        public HomeView()
+        public MainWindow()
         {
             InitializeComponent();
         }
