@@ -16,5 +16,14 @@
     <Window.DataContext>
         <viewModels:MainViewModel/>
     </Window.DataContext>
-    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TabControl Style="{StaticResource MainTabControl}"
+                    Grid.Column="0">
+            <TabItem Header="Current Activity"/>
+        </TabControl>
+    </Grid>
 </Window>
