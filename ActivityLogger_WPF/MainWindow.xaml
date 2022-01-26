@@ -17,13 +17,42 @@
         <viewModels:MainViewModel/>
     </Window.DataContext>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TabControl Style="{StaticResource MainTabControl}"
-                    Grid.Column="0">
-            <TabItem Header="Current Activity"/>
-        </TabControl>
+        <Border Grid.Row="0" Background="#8a00e6"
+                Grid.ColumnSpan="2"
+                MouseDown="Border_MouseDown">
+            <Grid HorizontalAlignment="Stretch">
+                <TextBlock Name="DateTimeTextBlock"
+                           HorizontalAlignment="Center"
+                           FontWeight="SemiBold"
+                           VerticalAlignment="Center"
+                           FontSize="15"
+                           Text="DateTime"
+                           Foreground="Lime"/>
+
+
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right">
+                    <Button Style="{StaticResource BasicButton}"
+                            Click="MinimizeButton_Click"
+                            Content="_"/>
+                    <Button Style="{StaticResource BasicButton}"
+                            Click="MaximizeButton_Click"
+                            Content="O"/>
+                    <Button Style="{StaticResource BasicButton}"
+                            Click="CloseButton_Click"
+                            Content="X"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        
     </Grid>
 </Window>

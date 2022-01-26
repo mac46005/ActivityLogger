@@ -12,10 +12,27 @@
                             <RotateTransform Angle="270"/>
                         </Setter.Value>
                     </Setter>
-                    
+
                 </Style>
             </Setter.Value>
         </Setter>
     </Style>
-        
+    
+    
+    <!--Top Left Buttons-->
+    <Style TargetType="Button"
+           x:Key="BasicButton">
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="#4c0080"/>
+        <Setter Property="Foreground" Value="Lime"/>
+        <Setter Property="Margin" Value="0 0 3 0"/>
+    </Style>
+    
+    
+    
+    
+    
+    
 </ResourceDictionary>

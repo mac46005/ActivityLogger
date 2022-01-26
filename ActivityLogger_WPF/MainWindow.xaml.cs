@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace ActivityLogger_WPF
 {
@@ -20,9 +21,21 @@ namespace ActivityLogger_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer _timer = new DispatcherTimer();
+
+
+
         public MainWindow()
         {
+            _timer.Interval = new TimeSpan(0, 0, 1);
+            _timer.Tick += _timer_Tick;
+            _timer.Start();
             InitializeComponent();
+        }
+
+        private void _timer_Tick(object? sender, EventArgs e)
+        {
+            DateTimeTextBlock.Text = DateTime.Now.ToString("F");
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
@@ -52,6 +65,7 @@ namespace ActivityLogger_WPF
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
+            _timer.Stop();
             Application.Current.Shutdown();
         }
     }
