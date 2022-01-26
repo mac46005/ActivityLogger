@@ -7,9 +7,4 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="MVVM\Models\" />
-    <Folder Include="MVVM\Views\" />
-  </ItemGroup>
-
 </Project>
