@@ -1,4 +1,4 @@
-﻿using ActivityLogger_WPF.MVVM.Models;
+﻿using ActivityLogger_WPF.Core;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,62 +8,23 @@ using System.Threading.Tasks;
 
 namespace ActivityLogger_WPF.MVVM.ViewModels
 {
-    class MainViewModel
+    class MainViewModel : ObservableObject
     {
-        public ObservableCollection<MessageModel> Messages { get; set; }
-        public ObservableCollection<ContactModel> Contacts { get; set; }
+
 
         public MainViewModel()
         {
-            Messages = new ObservableCollection<MessageModel>();
-            Contacts = new ObservableCollection<ContactModel>();
+            // The SendCommand
+            //SendCommand = new RelayCommand(o =>
+            //{
+            //    Messages.Add(new MessageModel
+            //    {
+            //        Message = Message,
+            //        FirstMessage = false
+            //    });
 
-            Messages.Add(new MessageModel
-            {
-                Username = "Allison",
-                UsernameColor = "#455245",
-                ImageSource = "",
-                Message = "Test",
-                Time = DateTime.Now,
-                IsNativeOrigin = false,
-                FirstMessage = true
-            });
-
-            for (int i = 0; i < 3; i++)
-            {
-                Messages.Add(new MessageModel
-                {
-                    Username = "Allison",
-                    UsernameColor = "#455245",
-                    ImageSource = "",
-                    Message = "Test" + i,
-                    Time = DateTime.Now,
-                    IsNativeOrigin = false,
-                    FirstMessage = false
-                });
-            }
-
-            Messages.Add(new MessageModel
-            {
-                Username = "Username",
-                UsernameColor = "#485245",
-                ImageSource = "",
-                Message = "Last",
-                Time = DateTime.Now,
-                IsNativeOrigin = true,
-                FirstMessage = true
-            });
-
-
-            for (int i = 0; i < 3; i++)
-            {
-                Contacts.Add(new ContactModel
-                {
-                    Username = "User" + i,
-                    ImageSource = "",
-                    Messages = Messages
-                });
-            }
+            //    Message = "";
+            //});
         }
     }
 }
