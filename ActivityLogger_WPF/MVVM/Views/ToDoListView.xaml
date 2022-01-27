@@ -39,10 +39,7 @@
 
                 </Border>
                 <ListView Grid.Row="1"
-                          BorderThickness="0">
-                    <ListView.Background>
-                        <SolidColorBrush Opacity="0.9" Color="Black"/>
-                    </ListView.Background>
+                          Style="{StaticResource ToDoList}">
                 </ListView>
             </Grid>
 
@@ -61,6 +58,8 @@
                                Foreground="Lime"/>
                 </Border>
 
+                <ListView Grid.Row="1"
+                          Style="{StaticResource CompletedList}"/>
             </Grid>
         </Grid>
 

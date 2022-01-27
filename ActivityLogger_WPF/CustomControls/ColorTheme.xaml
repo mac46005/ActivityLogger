@@ -14,4 +14,9 @@
     <!--ToDoTheme-->
     <SolidColorBrush x:Key="ToDoListTextTask" Color="#e68a00"/>
     <SolidColorBrush x:Key="SubmitButton" Opacity="0.7" Color="#1a1aff"/>
+
+    <SolidColorBrush x:Key="ListViewBackground" Opacity="0.9" Color="Black"/>
+
+
+
 </ResourceDictionary>
