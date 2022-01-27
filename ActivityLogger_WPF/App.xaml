@@ -7,6 +7,9 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="CustomControls/MainWindowControls.xaml"/>
+                <ResourceDictionary Source="CustomControls/ToDoViewControls.xaml"/>
+                <ResourceDictionary Source="CustomControls/ColorTheme.xaml"/>
+                <ResourceDictionary Source="ViewModelDataTemplate.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

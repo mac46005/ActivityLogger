@@ -10,7 +10,6 @@ namespace ActivityLogger_WPF.MVVM.Models
     public class ToDoModel : ObservableObject
     {
         private bool _isTaskDone = false;
-
         public bool IsTaskDone
         {
             get { return _isTaskDone; }

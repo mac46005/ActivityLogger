@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--Color Shemes-->
+    <Color x:Key="RedMainTheme">#990000</Color>
+    <Color x:Key="RedAccentTheme">#e60000</Color>
+
+    <Color x:Key="PurpleMainTheme">#a31aff</Color>
+    <Color x:Key="PurpleAccentTheme">#8a00e6</Color>
+    
+    <!--MainWindow Theme-->
+    <SolidColorBrush x:Key="AccentTheme" Color="{StaticResource RedAccentTheme}"/>
+    
+    <!--ToDoTheme-->
+    <SolidColorBrush x:Key="ToDoListTextTask" Color="#e68a00"/>
+    <SolidColorBrush x:Key="SubmitButton" Opacity="0.7" Color="#1a1aff"/>
+</ResourceDictionary>

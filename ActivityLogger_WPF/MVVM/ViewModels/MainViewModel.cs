@@ -10,10 +10,23 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 {
     class MainViewModel : ObservableObject
     {
+        private object _selectedViewModel;
+
+        public object SelectedViewModel
+        {
+            get { return _selectedViewModel; }
+            set 
+            {
+                _selectedViewModel = value;
+                OnPropertyChanged();
+            }
+        }
 
 
         public MainViewModel()
         {
+            SelectedViewModel = new ToDoListViewModel();
+
             // The SendCommand
             //SendCommand = new RelayCommand(o =>
             //{

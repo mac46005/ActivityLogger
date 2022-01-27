@@ -11,7 +11,7 @@
         ResizeMode="CanResizeWithGrip"
         xmlns:viewModels="clr-namespace:ActivityLogger_WPF.MVVM.ViewModels">
     <Window.Background>
-        <SolidColorBrush Opacity="0.5" Color="#a31aff"/>
+        <SolidColorBrush Opacity="0.5" Color="{StaticResource RedMainTheme}"/>
     </Window.Background>
     <Window.DataContext>
         <viewModels:MainViewModel/>
@@ -30,7 +30,7 @@
         </Grid.ColumnDefinitions>
         
         <!--Top Border-->
-        <Border Grid.Row="0" Background="#8a00e6"
+        <Border Grid.Row="0" Background="{StaticResource AccentTheme}"
                 Grid.ColumnSpan="2"
                 MouseDown="Border_MouseDown">
             <Grid HorizontalAlignment="Stretch">
@@ -62,7 +62,7 @@
         <!--Main Content-->
         <Grid Grid.Row="1"
               Grid.Column="1">
-            <ContentControl Content="{Binding CurrentViewModel}"/>
+            <ContentControl Content="{Binding SelectedViewModel}"/>
         </Grid>
     </Grid>
     

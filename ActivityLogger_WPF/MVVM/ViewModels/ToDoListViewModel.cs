@@ -18,5 +18,10 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
             set { _textBoxValue = value; }
         }
 
+
+        public RelayCommand Submit = new RelayCommand(o =>
+        {
+
+        });
     }
 }

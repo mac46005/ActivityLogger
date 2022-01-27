@@ -14,6 +14,8 @@
         </Grid.RowDefinitions>
         
         
+        
+        <!--MIDDLE-->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -21,9 +23,67 @@
             </Grid.ColumnDefinitions>
             
             
+            <!--TODO ListView-->
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                        HorizontalAlignment="Stretch"
+                        Background="{StaticResource AccentTheme}">
+                    <TextBlock Text="ToDo List"
+                               HorizontalAlignment="Center"
+                               Foreground="Lime"/>
+
+                </Border>
+                <ListView Grid.Row="1"
+                          BorderThickness="0">
+                    <ListView.Background>
+                        <SolidColorBrush Opacity="0.9" Color="Black"/>
+                    </ListView.Background>
+                </ListView>
+            </Grid>
+
+            <!--COMPLETED TASKS ListView-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0"
+                        HorizontalAlignment="Stretch"
+                        Background="{StaticResource AccentTheme}">
+                    <TextBlock Text="Completed List"
+                               HorizontalAlignment="Center"
+                               Foreground="Lime"/>
+                </Border>
+
+            </Grid>
         </Grid>
-        
-        
-        
+
+
+
+
+
+        <!--CREATE NEW TODO OBJECT Section-->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            
+            <TextBox Grid.Column="0"/>
+            <DatePicker Grid.Column="1"/>
+            <Button Grid.Column="2"
+                    Content="Create&#10;New&#10;Item"
+                    Style="{StaticResource SubmitToDoButtonTheme}"/>
+        </Grid>
+
+
     </Grid>
 </UserControl>
