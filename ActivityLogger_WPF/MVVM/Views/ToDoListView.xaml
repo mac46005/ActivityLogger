@@ -5,14 +5,45 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ActivityLogger_WPF.MVVM.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Foreground="{StaticResource ToDoViewGeneralTextColor}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        
+
+
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <!--ToDo Options -->
+            <StackPanel Grid.Column="0" 
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch">
+                <TextBlock Text="Selected Item:"/>
+                <TextBlock Text="NONE" Foreground="{StaticResource ToDoListTextTask}"/>
+                <Button Content="Edit"/>
+                <Button Content="Delete"/>
+            </StackPanel>
+            
+            <!--Completed Options-->
+            <StackPanel Grid.Column="1" 
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch">
+                <TextBlock Text="Selected Item:"/>
+                <TextBlock Text="NONE" Foreground="{StaticResource ToDoListTextTask}"/>
+                <Button Content="Mark UnComplete"/>
+            </StackPanel>
+            
+        </Grid>
         
         
         <!--MIDDLE-->

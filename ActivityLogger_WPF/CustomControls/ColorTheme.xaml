@@ -12,6 +12,9 @@
     <SolidColorBrush x:Key="AccentTheme" Color="{StaticResource RedAccentTheme}"/>
     
     <!--ToDoTheme-->
+    <SolidColorBrush x:Key="ToDoViewGeneralTextColor" Color="#e68a00"/>
+
+
     <SolidColorBrush x:Key="ToDoListTextTask" Color="#e68a00"/>
     <SolidColorBrush x:Key="SubmitButton" Opacity="0.7" Color="#1a1aff"/>
 

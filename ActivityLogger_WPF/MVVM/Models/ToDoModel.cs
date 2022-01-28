@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 
 namespace ActivityLogger_WPF.MVVM.Models
 {
     public class ToDoModel : ObservableObject
     {
-
 
 
         public string ToDoValue { get; set; }

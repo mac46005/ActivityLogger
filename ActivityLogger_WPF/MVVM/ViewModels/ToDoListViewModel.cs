@@ -7,13 +7,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace ActivityLogger_WPF.MVVM.ViewModels
 {
     class ToDoListViewModel : ObservableObject
     {
-
+        public CollectionView ToDoCollectionView;
         public ObservableCollection<ToDoModel> ToDoCollection { get; set; } = new ObservableCollection<ToDoModel>();
 
 
@@ -28,9 +29,9 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
         }
         public ToDoListViewModel()
         {
+            ToDoCollectionView = new CollectionView(ToDoCollection);
 
-
-
+            
             ClickSubmitCommand = new RelayCommand(o =>
             {
                 ToDoCollection.Add(new ToDoModel { ToDoValue = TextBoxValue });
