@@ -80,7 +80,7 @@
             <DatePicker Grid.Column="1"/>
             <Button Grid.Column="2"
                     Content="Create&#10;New&#10;Item"
-                    
+                    Style="{StaticResource SubmitToDoButtonTheme}"
                     Command="{Binding ClickSubmitCommand}"/>
         </Grid>
 

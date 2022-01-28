@@ -73,9 +73,10 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border 
+                    <Border Background="{DynamicResource SubmitButton}"
                             CornerRadius="5">
-                        <Button Background="Transparent"
+                        <Button Content="{TemplateBinding Content}"
+                                Background="Transparent"
                                 BorderThickness="0"
                                 Foreground="Lime"
                                 Command="{TemplateBinding Command}">
