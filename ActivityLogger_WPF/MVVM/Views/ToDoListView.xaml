@@ -38,7 +38,11 @@
                                Foreground="Lime"/>
 
                 </Border>
+                
+                
+                <!--TODO LIST-->
                 <ListView Grid.Row="1"
+                          ItemsSource="{Binding ToDoCollection}"
                           Style="{StaticResource ToDoList}">
                 </ListView>
             </Grid>
@@ -76,8 +80,11 @@
             </Grid.ColumnDefinitions>
             
             
-            <TextBox Grid.Column="0"/>
-            <DatePicker Grid.Column="1"/>
+            <TextBox Grid.Column="0"
+                     Text="{Binding TextBoxValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+            <DatePicker Grid.Column="1"
+                        />
+            
             <Button Grid.Column="2"
                     Content="Create&#10;New&#10;Item"
                     Style="{StaticResource SubmitToDoButtonTheme}"

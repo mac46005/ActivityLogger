@@ -20,13 +20,15 @@
            x:Key="ToDoList">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate>
-                    <ListView Style="{StaticResource GeneralListView}">
+                <ControlTemplate TargetType="ListView">
+                    <ListView Style="{StaticResource GeneralListView}"
+                              ItemsSource="{TemplateBinding ItemsSource}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <CheckBox Content="{Binding TaskText}"
-                                          Foreground="{StaticResource ToDoListTextTask}"
-                                          IsChecked="{Binding IsTaskDone}"/>
+                                <CheckBox Content="{Binding ToDoValue}"
+                                          Foreground="{DynamicResource ToDoListTextTask}"
+                                          IsChecked="{Binding IsTaskDone}"
+                                          FontSize="30"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>

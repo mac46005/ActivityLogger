@@ -9,20 +9,22 @@ namespace ActivityLogger_WPF.MVVM.Models
 {
     public class ToDoModel : ObservableObject
     {
+
+
+
+        public string ToDoValue { get; set; }
+
+        public DateTime Due { get; set; }
+
+
+
+
+
         private bool _isTaskDone = false;
         public bool IsTaskDone
         {
             get { return _isTaskDone; }
             set { _isTaskDone = value; }
-        }
-
-
-        private string _toDo;
-
-        public string ToDo
-        {
-            get { return _toDo; }
-            set { _toDo = value; }
         }
 
     }
