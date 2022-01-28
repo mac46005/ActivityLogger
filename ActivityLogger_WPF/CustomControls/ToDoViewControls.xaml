@@ -77,7 +77,8 @@
                             CornerRadius="5">
                         <Button Background="Transparent"
                                 BorderThickness="0"
-                                Foreground="Lime">
+                                Foreground="Lime"
+                                Command="{TemplateBinding Command}">
                         </Button>
                               
                     </Border>

@@ -1,9 +1,11 @@
 ﻿using ActivityLogger_WPF.Core;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace ActivityLogger_WPF.MVVM.ViewModels
 {
@@ -19,9 +21,9 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
         }
 
 
-        public RelayCommand Submit = new RelayCommand(o =>
+        public ICommand Submit = new RelayCommand(o =>
         {
-
+            Debug.WriteLine("Submit");
         });
     }
 }
