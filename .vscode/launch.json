@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/ActivityLogger_WPF_UI/bin/Debug/net5.0-windows/ActivityLogger_WPF_UI.dll",
+            "program": "${workspaceFolder}/ActivityLogger_WPF/bin/Debug/net6.0-windows/ActivityLogger_WPF.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/ActivityLogger_WPF_UI",
+            "cwd": "${workspaceFolder}/ActivityLogger_WPF",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
