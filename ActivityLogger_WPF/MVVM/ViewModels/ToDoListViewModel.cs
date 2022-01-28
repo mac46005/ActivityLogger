@@ -21,7 +21,11 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
         }
 
 
-        public ICommand Submit = new RelayCommand(o =>
+
+
+
+        public ICommand ClickSubmitCommand { get; set; } =
+        new RelayCommand(o =>
         {
             Debug.WriteLine("Submit");
         });
