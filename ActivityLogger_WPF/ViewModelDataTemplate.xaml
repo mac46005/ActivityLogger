@@ -5,4 +5,11 @@
     <DataTemplate DataType="{x:Type viewModels:ToDoListViewModel}">
         <views:ToDoListView/>
     </DataTemplate>
+
+    <DataTemplate DataType="{x:Type viewModels:AddEditToDoViewModel}">
+        <views:AddEditToDoView/>
+    </DataTemplate>
+    
+    
+    
 </ResourceDictionary>

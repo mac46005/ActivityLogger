@@ -78,6 +78,15 @@
                 </ListView>
             </Grid>
 
+            
+            
+            
+            
+            
+            
+            
+            
+            
             <!--COMPLETED TASKS ListView-->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
@@ -102,10 +111,29 @@
 
 
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         <!--CREATE NEW TODO OBJECT Section-->
         <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
+            <ContentControl Content="{Binding AddEditToDoViewModel}"/>
+            <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -114,14 +142,27 @@
             
             <TextBox Grid.Column="0"
                      Text="{Binding TextBoxValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-            <DatePicker Grid.Column="1"
-                        SelectedDate="{Binding SetDueDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-                        />
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+                <DatePicker SelectedDate="{Binding SetDueDate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <TextBlock Text="Hour:"/>
+                    <TextBox Text="{Binding Hour,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="2"
+                             Height="20" Width="20"
+                             Margin="0 0 40 0"/>
+                    <TextBlock Text="Minute:"/>
+                    <TextBox Text="{Binding Minute,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                             MaxLength="2"
+                             Height="20" Width="20"/>
+                </StackPanel>
+            </StackPanel>
+            
             
             <Button Grid.Column="2"
                     Content="Create&#10;New&#10;Item"
                     Style="{StaticResource SubmitToDoButtonTheme}"
-                    Command="{Binding ClickSubmitCommand}"/>
+                    Command="{Binding ClickSubmitCommand}"/>-->
         </Grid>
 
 

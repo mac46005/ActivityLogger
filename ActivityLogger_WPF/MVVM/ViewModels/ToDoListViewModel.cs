@@ -141,6 +141,15 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
             }
         }
 
+        private AddEditToDoViewModel _addEditToDoViewModel = new AddEditToDoViewModel();
+
+        public AddEditToDoViewModel AddEditToDoViewModel
+        {
+            get
+            {
+                return _addEditToDoViewModel;
+            }
+        }
 
         #endregion
 
@@ -160,21 +169,24 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
             CompleteCollectionViewSource = new CollectionViewSource { Source = ToDoCollection };
             ToDoCollectionViewSource.Filter += ToDoCollectionViewSource_Filter;
             CompleteCollectionViewSource.Filter += CompleteCollectionViewSource_Filter;
-
+            AddEditToDoViewModel.SubmitEvent += AddEditToDoViewModel_SubmitEvent;
 
 
 
             ClickSubmitCommand = new RelayCommand(o =>
             {
-                ToDoCollection.Add(new ToDoModel { ToDoValue = TextBoxValue });
-                SubscribeToDoItems();
+
             });
         }
         // END Constructor
 
 
 
-
+        private void AddEditToDoViewModel_SubmitEvent(object? sender, ToDoModel e)
+        {
+            ToDoCollection.Add(e);
+            SubscribeToDoItems();
+        }
 
 
 
@@ -204,7 +216,7 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
         /// <param name="e"></param>
         private void Item_TaskIsDoneEvent(object? sender, EventArgs e)
         {
-            
+
             CompleteCollectionViewSource.View.Refresh();
             ToDoCollectionViewSource.View.Refresh();
         }
