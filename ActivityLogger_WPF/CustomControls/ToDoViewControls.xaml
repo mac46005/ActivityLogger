@@ -87,9 +87,6 @@
                                                 <ColumnDefinition/>
                                                 <ColumnDefinition/>
                                             </Grid.ColumnDefinitions>
-
-                                            <CheckBox Grid.Column="0" IsChecked="{Binding IsTaskDone}"
-                                              Background="Transparent"/>
                                             <TextBlock Grid.Column="1" Text="{Binding ToDoValue}"
                                                Foreground="{DynamicResource ToDoListTextTask}"
                                                FontSize="30"/>
@@ -100,7 +97,6 @@
                                             <TextBlock Grid.Column="3" Text="{Binding Due}"
                                                Foreground="{DynamicResource ToDoListTextTask}"
                                                FontSize="30"/>
-
 
 
                                         </Grid>

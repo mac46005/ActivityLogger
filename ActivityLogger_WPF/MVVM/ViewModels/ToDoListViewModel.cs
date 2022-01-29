@@ -15,6 +15,9 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 {
     class ToDoListViewModel : ObservableObject
     {
+
+
+        #region listprocessing
         /// <summary>
         /// This is in charge filtering the items
         /// </summary>
@@ -28,22 +31,62 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
         public ICollectionView ToDoSourceCollectionView => ToDoCollectionViewSource.View;
         public ICollectionView CompleteSourceCollectionView => CompleteCollectionViewSource.View;
 
-
-
-
-
-        
         /// <summary>
         /// This is the collection of all ToDoModel Item
         /// </summary>
         private ObservableCollection<ToDoModel> ToDoCollection { get; set; } = new ObservableCollection<ToDoModel>();
 
+        /// <summary>
+        /// Filters ToDo Items and adds to CompleteList if ToDo object IsTaskDone is true
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CompleteCollectionViewSource_Filter(object sender, FilterEventArgs e)
+        {
+            ToDoModel _item = e.Item as ToDoModel;
+            if (_item.IsTaskDone == true)
+            {
+                e.Accepted = true;
+            }
+        }
+
+
+
+        /// <summary>
+        /// Filters ToDo Item and adds to ToDoList if ToDo object isTaskDone is false
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ToDoCollectionViewSource_Filter(object sender, FilterEventArgs e)
+        {
+            ToDoModel _item = e.Item as ToDoModel;
+            if (_item.IsTaskDone == false)
+            {
+                e.Accepted = true;
+            }
+        }
+        #endregion
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        #region PUBLIC PROPERTIES
 
         private string _textBoxValue = "";
 
@@ -77,11 +120,40 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 
 
 
+        /// <summary>
+        /// Enables and disables Submit button if TextboxValue is not empty and SetDueDate is more than today
+        /// </summary>
+        private bool _isSubmitButtonEnabled;
+        public bool IsSubmitButtonEnabled
+        {
+            get
+            {
+
+                if (TextBoxValue.Length > 0 && SetDueDate > DateTime.Now)
+                {
+                    _isSubmitButtonEnabled = true;
+                }
+                else
+                {
+                    _isSubmitButtonEnabled = false;
+                }
+                return _isSubmitButtonEnabled;
+            }
+        }
+
+
+        #endregion
 
 
 
 
 
+
+
+
+
+
+        // Constructor
         public ToDoListViewModel()
         {
             ToDoCollectionViewSource = new CollectionViewSource { Source = ToDoCollection };
@@ -98,6 +170,7 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
                 SubscribeToDoItems();
             });
         }
+        // END Constructor
 
 
 
@@ -106,6 +179,14 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 
 
 
+
+
+
+
+        #region METHODS
+        /// <summary>
+        /// Subscribes all ToDoItems.TaskIsDoneEvent 
+        /// </summary>
         private void SubscribeToDoItems()
         {
             foreach (var item in ToDoCollection)
@@ -114,14 +195,20 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
             }
         }
 
+
+
+        /// <summary>
+        /// Should update Lists according to filter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Item_TaskIsDoneEvent(object? sender, EventArgs e)
         {
+            
             CompleteCollectionViewSource.View.Refresh();
             ToDoCollectionViewSource.View.Refresh();
-        
-        
-        
         }
+        #endregion
 
 
 
@@ -135,23 +222,6 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 
 
 
-        private void CompleteCollectionViewSource_Filter(object sender, FilterEventArgs e)
-        {
-            ToDoModel _item = e.Item as ToDoModel;
-            if (_item.IsTaskDone == true)
-            {
-                e.Accepted = true;
-            }
-        }
-
-        private void ToDoCollectionViewSource_Filter(object sender, FilterEventArgs e)
-        {
-            ToDoModel _item = e.Item as ToDoModel;
-            if (_item.IsTaskDone == false)
-            {
-                e.Accepted = true;
-            }
-        }
 
 
 
@@ -165,29 +235,15 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 
 
 
-        private bool _isSubmitButtonEnabled;
 
 
 
-        public bool IsSubmitButtonEnabled
-        {
-            get 
-            { 
-                
-                if (TextBoxValue.Length > 0 && SetDueDate > DateTime.Now)
-                {
-                    _isSubmitButtonEnabled = true;
-                }
-                else
-                {
-                    _isSubmitButtonEnabled = false;
-                }
-                return _isSubmitButtonEnabled; 
-            }
-        }
 
 
-        // COMMANDS
+
+
+        #region COMMANDS
         public ICommand ClickSubmitCommand { get; set; }
+        #endregion
     }
 }

@@ -30,7 +30,7 @@ namespace ActivityLogger_WPF.MVVM.Models
             { 
                 _isTaskDone = value;
                 
-                OnPropertyChanged("IsTaskDon");
+                OnPropertyChanged("IsTaskDone");
 
                 if (value == true)
                 {
