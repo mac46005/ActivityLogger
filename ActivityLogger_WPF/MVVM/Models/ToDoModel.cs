@@ -10,26 +10,44 @@ namespace ActivityLogger_WPF.MVVM.Models
 {
     public class ToDoModel : ObservableObject
     {
-        public event EventHandler<TaskDoneEventHandler> TaskIsDoneEvent;
+        private DateTime _dateCompleted;
+        private bool _isOverDue;
+        private bool _isTaskDone = false;
 
+
+
+        /// <summary>
+        /// This describes the task to complete
+        /// </summary>
         public string ToDoValue { get; set; }
 
+        /// <summary>
+        /// The date this task need to be complete
+        /// </summary>
         public DateTime Due { get; set; }
 
-
-        public ToDoModel()
+        /// <summary>
+        /// When the task is complete this records when the 
+        /// task has been completed
+        /// </summary>
+        public DateTime DateCompleted
         {
+            get { return _dateCompleted; }
+            set { _dateCompleted = value; }
         }
 
 
-        private bool _isTaskDone = false;
+
+        /// <summary>
+        /// Marks the object as completed or not completed
+        /// </summary>
         public bool IsTaskDone
         {
             get { return _isTaskDone; }
-            set 
-            { 
+            set
+            {
                 _isTaskDone = value;
-                
+
                 OnPropertyChanged("IsTaskDone");
 
                 if (value == true)
@@ -45,10 +63,70 @@ namespace ActivityLogger_WPF.MVVM.Models
         }
 
 
+        /// <summary>
+        /// Checks to see if the ToDo objects Due is less than the current time 
+        /// is it is not and the task is not complete is will return true.
+        /// </summary>
+        public bool IsOverDue
+        {
+            get { return _isOverDue; }
+            private set
+            {
+                if (DateTime.Now > Due && IsTaskDone != true)
+                {
+                    _isOverDue = true;
+                }
+                else
+                {
+                    _isOverDue = false;
+                }
+                OnPropertyChanged("IsOverDue");
+            }
+        }
 
-        
 
 
+
+
+
+
+
+
+
+
+
+
+        #region Contructors
+        public ToDoModel()
+        {
+        }
+
+        public ToDoModel(string toDoValue, DateTime due)
+        {
+            ToDoValue = toDoValue;
+            Due = due;
+        }
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public event EventHandler<TaskDoneEventHandler> TaskIsDoneEvent;
     }
 
 
