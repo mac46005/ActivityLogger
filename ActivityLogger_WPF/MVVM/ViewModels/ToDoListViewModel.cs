@@ -15,17 +15,28 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 {
     class ToDoListViewModel : ObservableObject
     {
-        public CollectionViewSource ToDoCollectionViewSource;
+        /// <summary>
+        /// This is in charge filtering the items
+        /// </summary>
+        private CollectionViewSource ToDoCollectionViewSource;
+        private CollectionViewSource CompleteCollectionViewSource;
+
+
+        /// <summary>
+        /// The view will see the filtered list here
+        /// </summary>
+        public ICollectionView ToDoSourceCollectionView => ToDoCollectionViewSource.View;
+        public ICollectionView CompleteSourceCollectionView => CompleteCollectionViewSource.View;
 
 
 
-        public ICollectionView ToDoSourceCollection => ToDoCollectionViewSource.View;
 
 
-
-
-
-        public ObservableCollection<ToDoModel> ToDoCollection { get; set; } = new ObservableCollection<ToDoModel>();
+        
+        /// <summary>
+        /// This is the collection of all ToDoModel Item
+        /// </summary>
+        private ObservableCollection<ToDoModel> ToDoCollection { get; set; } = new ObservableCollection<ToDoModel>();
 
 
 
@@ -63,13 +74,28 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 
 
 
+
+
+
+
+
+
+
+
         public ToDoListViewModel()
         {
+            ToDoCollectionViewSource = new CollectionViewSource { Source = ToDoCollection };
+            CompleteCollectionViewSource = new CollectionViewSource { Source = ToDoCollection };
+            ToDoCollectionViewSource.Filter += ToDoCollectionViewSource_Filter;
+            CompleteCollectionViewSource.Filter += CompleteCollectionViewSource_Filter;
+
+
 
 
             ClickSubmitCommand = new RelayCommand(o =>
             {
                 ToDoCollection.Add(new ToDoModel { ToDoValue = TextBoxValue });
+                SubscribeToDoItems();
             });
         }
 
@@ -80,7 +106,68 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 
 
 
+        private void SubscribeToDoItems()
+        {
+            foreach (var item in ToDoCollection)
+            {
+                item.TaskIsDoneEvent += Item_TaskIsDoneEvent;
+            }
+        }
+
+        private void Item_TaskIsDoneEvent(object? sender, EventArgs e)
+        {
+            CompleteCollectionViewSource.View.Refresh();
+            ToDoCollectionViewSource.View.Refresh();
+        
+        
+        
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        private void CompleteCollectionViewSource_Filter(object sender, FilterEventArgs e)
+        {
+            ToDoModel _item = e.Item as ToDoModel;
+            if (_item.IsTaskDone == true)
+            {
+                e.Accepted = true;
+            }
+        }
+
+        private void ToDoCollectionViewSource_Filter(object sender, FilterEventArgs e)
+        {
+            ToDoModel _item = e.Item as ToDoModel;
+            if (_item.IsTaskDone == false)
+            {
+                e.Accepted = true;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
         private bool _isSubmitButtonEnabled;
+
+
 
         public bool IsSubmitButtonEnabled
         {

@@ -25,36 +25,38 @@
                               ItemsSource="{TemplateBinding ItemsSource}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
+                                <Grid>
+                                    <Viewbox>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
 
-                                <Viewbox>
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <CheckBox Grid.Column="0" IsChecked="{Binding IsTaskDone}"
+                                            <CheckBox Grid.Column="0" IsChecked="{Binding IsTaskDone}"
                                               Background="Transparent"/>
-                                        <TextBlock Grid.Column="1" Text="{Binding ToDoValue}"
+                                            <TextBlock Grid.Column="1" Text="{Binding ToDoValue}"
                                                Foreground="{DynamicResource ToDoListTextTask}"
                                                FontSize="30"/>
-                                        <TextBlock Grid.Column="2" Text="Due:"
+                                            <TextBlock Grid.Column="2" Text="Due:"
                                                FontSize="30"
                                                Margin="10 0 0 0"
                                                Foreground="{DynamicResource ToDoListTextTask}"/>
-                                        <TextBlock Grid.Column="3" Text="{Binding Due}"
+                                            <TextBlock Grid.Column="3" Text="{Binding Due}"
                                                Foreground="{DynamicResource ToDoListTextTask}"
                                                FontSize="30"/>
 
 
 
-                                    </Grid>
+                                        </Grid>
 
 
 
-                                </Viewbox>
+                                    </Viewbox>
+                                </Grid>
+
 
                             </DataTemplate>
                         </ListView.ItemTemplate>
@@ -71,8 +73,44 @@
            x:Key="CompletedList">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate>
-                    <ListView Style="{StaticResource GeneralListView}">
+                <ControlTemplate TargetType="ListView">
+                    <ListView Style="{StaticResource GeneralListView}"
+                              ItemsSource="{TemplateBinding ItemsSource}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Viewbox>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <CheckBox Grid.Column="0" IsChecked="{Binding IsTaskDone}"
+                                              Background="Transparent"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding ToDoValue}"
+                                               Foreground="{DynamicResource ToDoListTextTask}"
+                                               FontSize="30"/>
+                                            <TextBlock Grid.Column="2" Text="Due:"
+                                               FontSize="30"
+                                               Margin="10 0 0 0"
+                                               Foreground="{DynamicResource ToDoListTextTask}"/>
+                                            <TextBlock Grid.Column="3" Text="{Binding Due}"
+                                               Foreground="{DynamicResource ToDoListTextTask}"
+                                               FontSize="30"/>
+
+
+
+                                        </Grid>
+
+
+
+                                    </Viewbox>
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
                 </ControlTemplate>
             </Setter.Value>

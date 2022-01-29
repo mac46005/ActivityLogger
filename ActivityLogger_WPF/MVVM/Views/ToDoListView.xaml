@@ -73,7 +73,7 @@
                 
                 <!--TODO LIST-->
                 <ListView Grid.Row="1"
-                          ItemsSource="{Binding ToDoCollection}"
+                          ItemsSource="{Binding ToDoSourceCollectionView}"
                           Style="{StaticResource ToDoList}">
                 </ListView>
             </Grid>
@@ -94,6 +94,7 @@
                 </Border>
 
                 <ListView Grid.Row="1"
+                          ItemsSource="{Binding CompleteSourceCollectionView}"
                           Style="{StaticResource CompletedList}"/>
             </Grid>
         </Grid>
