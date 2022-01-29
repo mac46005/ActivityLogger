@@ -15,6 +15,26 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 
         #region PUBLIC PROPERTIES
 
+
+        private string _hour;
+
+        public string Hour
+        {
+            get { return _hour; }
+            set { _hour = value; }
+        }
+        private string _minute;
+
+        public string Minute
+        {
+            get { return _minute; }
+            set { _minute = value; }
+        }
+
+
+
+
+
         private string _textBoxValue = "";
 
         public string TextBoxValue
@@ -75,6 +95,11 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 
 
 
+
+
+
+
+        #region CONSTRUCTOR
         public AddEditToDoViewModel()
         {
             ClickSubmitCommand = new RelayCommand(o =>
@@ -88,17 +113,45 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
                 handler?.Invoke(this, toDoModel);
             });
         }
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
         #region METHODS
         public void ResetTextBoxes()
         {
-
+            TextBoxValue = "";
         }
         #endregion
+
+
+
+
+
+
+
+
+
 
 
         #region COMMANDS
         public ICommand ClickSubmitCommand { get; set; }
         #endregion
+
+
+
+
+
 
         public event EventHandler<ToDoModel> SubmitEvent;
 
