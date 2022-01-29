@@ -8,13 +8,13 @@
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Background" Value="{DynamicResource ListViewBackground}"/>
     </Style>
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     <!--ToDo Section-->
     <Style TargetType="ListView"
            x:Key="ToDoList">
@@ -25,10 +25,37 @@
                               ItemsSource="{TemplateBinding ItemsSource}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <CheckBox Content="{Binding ToDoValue}"
-                                          Foreground="{DynamicResource ToDoListTextTask}"
-                                          IsChecked="{Binding IsTaskDone}"
-                                          FontSize="30"/>
+
+                                <Viewbox>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <CheckBox Grid.Column="0" IsChecked="{Binding IsTaskDone}"
+                                              Background="Transparent"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding ToDoValue}"
+                                               Foreground="{DynamicResource ToDoListTextTask}"
+                                               FontSize="30"/>
+                                        <TextBlock Grid.Column="2" Text="Due:"
+                                               FontSize="30"
+                                               Margin="10 0 0 0"
+                                               Foreground="{DynamicResource ToDoListTextTask}"/>
+                                        <TextBlock Grid.Column="3" Text="{Binding Due}"
+                                               Foreground="{DynamicResource ToDoListTextTask}"
+                                               FontSize="30"/>
+
+
+
+                                    </Grid>
+
+
+
+                                </Viewbox>
+
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
@@ -36,9 +63,9 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-    
-    
+
+
+
     <!--Completed section Theme-->
     <Style TargetType="ListView"
            x:Key="CompletedList">
@@ -46,29 +73,24 @@
             <Setter.Value>
                 <ControlTemplate>
                     <ListView Style="{StaticResource GeneralListView}">
-                        
-                        
-                        
-                        
-                        
                     </ListView>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!--Sumbission section-->
     <Style TargetType="Button"
            x:Key="SubmitToDoButtonTheme">
@@ -81,13 +103,14 @@
                                 Background="Transparent"
                                 BorderThickness="0"
                                 Foreground="Lime"
-                                Command="{TemplateBinding Command}">
+                                Command="{TemplateBinding Command}"
+                                IsEnabled="{Binding IsSubmitButtonEnabled}">
                         </Button>
-                              
+
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        
+
     </Style>
 </ResourceDictionary>
