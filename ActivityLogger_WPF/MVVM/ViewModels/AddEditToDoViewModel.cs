@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace ActivityLogger_WPF.MVVM.ViewModels
@@ -16,22 +17,67 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
         #region PUBLIC PROPERTIES
 
 
-        private string _hour;
+        private string _hourString;
 
         public string Hour
         {
-            get { return _hour; }
-            set { _hour = value; }
+            get { return _hourString; }
+            set
+            {
+                if (int.TryParse(value, out _hour) == true)
+                {
+
+                    int h = int.Parse(value);
+                    if (h <= 1 || h >= 12)
+                    {
+                        MessageBox.Show("Please input an integer that is 1 - 12");
+                    }
+                    else
+                    {
+                         _hour = h;
+                        _hourString = value;
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Please input a whole integer");
+                }
+
+                OnPropertyChanged("Hour");
+            }
         }
-        private string _minute;
+        private string _minuteString;
 
         public string Minute
         {
-            get { return _minute; }
-            set { _minute = value; }
+            get { return _minuteString; }
+            set
+            {
+                if (int.TryParse(value, out _minute))
+                {
+                    int m = int.Parse(value);
+                    if (m <= 1 || m >= 59)
+                    {
+                        MessageBox.Show("Please input an integer that is 1 - 12");
+                    }
+                    else
+                    {
+                        _hour = m;
+                        _minuteString = value;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please input a whole integer");
+                }
+
+                OnPropertyChanged("Minute");
+            }
         }
 
-
+        private int _hour = 0;
+        private int _minute = 0;
 
 
 
@@ -106,7 +152,14 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
             {
                 EventHandler<ToDoModel> handler = SubmitEvent;
 
+                // Create new DateTime object
+
+
+
                 ToDoModel toDoModel = new ToDoModel(TextBoxValue, SetDueDate);
+
+
+
                 TextBoxValue = "";
 
 
@@ -132,6 +185,9 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
         {
             TextBoxValue = "";
         }
+
+
+
         #endregion
 
 
@@ -154,6 +210,5 @@ namespace ActivityLogger_WPF.MVVM.ViewModels
 
 
         public event EventHandler<ToDoModel> SubmitEvent;
-
     }
 }
